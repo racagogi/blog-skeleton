@@ -1,0 +1,2 @@
+julia -e ' using Franklin;
+            serve(clear=true);'
