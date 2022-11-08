@@ -1,0 +1,428 @@
+/* selenized MIT License
+
+Copyright (c) 2021 Jan Warchoł
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+:root{
+--bg_0:          #fbf3db;
+--bg_1:          #e9e4d0;
+--bg_2:          #cfcebe;
+--dim_0:         #909995;
+--fg_0:          #53676d;
+--fg_1:          #3a4d53;
+--red:           #d2212d;
+--green:         #489100;
+--yellow:        #ad8900;
+--blue:          #0072d4;
+--magenta:       #ca4898;
+--cyan:          #009c8f;
+--br_red:        #cc1729;
+--br_green:      #428b00;
+--br_yellow:     #a78300;
+--br_blue:       #006dce;
+--br_cyan:       #00978a;
+--orange:        #c25d1e;
+--violet:        #8762c6;
+--br_orange:     #bc5819;
+--br_violet:     #825dc0;
+}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;1,400;1,700&family=Noto+Serif+KR:wght@400;700&display=swap');
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-family: 'Noto Serif KR', serif;
+    background-color:var(--bg_0);
+    color:var(--fg_0);
+    font-size:16pt;
+}
+
+.main-content {
+    display:flex;
+    position:absolute;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    right:0;
+    bottom: 0;
+}
+
+.side-bar {
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    max-width:20rem;
+    flex-grow:1;
+    top:0;
+    margin:1rem;
+    padding:0rem;
+    width:100%;
+}
+
+.side-bar .header {
+    border-bottom: 2px solid var(--fg_1);
+    font-size:32pt;
+    text-align:center;
+
+}
+
+#side-menu {
+    border-bottom: 1px solid var(--fg_1);
+
+}
+
+.menu-list {
+    text-align:center;
+    margin:1rem;
+    padding:0rem;
+}
+
+#navbar-narrow {
+    display:none;
+}
+
+#navbar {
+    text-align:right;
+}
+
+.nav__items {
+    padding:0rem;
+    margin:1rem;
+}
+
+#navbar a{
+    display:inline-block;
+    width:100%;
+    text-align:left;
+    font-size:14pt;
+    color: var(--fg_0);
+}
+
+#navbar a.active {
+    color: var(--br_green);
+}
+
+.nav__sub-title {
+    width:100%;
+}
+.content {
+    position:relative;
+    overflow-y:scroll;
+    scrollbar-width:0;
+    flex-grow:3.14;
+    width: 100%;
+    height:100%;
+}
+
+.franklin-content {
+    max-width:80rem;
+    margin:auto;
+}
+
+a[href] {
+    text-decoration:none;
+    font-weight:bold;
+    color:var(--fg_1);
+}
+
+#ac-toc, #ac-toc-button {
+    display:none;
+}
+
+@media (max-width: 100rem){
+    .body{
+        font-size:12pt;
+    }
+    .main-content {
+        flex-direction:column;
+    }
+    .side-bar {
+        flex-direction:row;
+        justify-content:space-between;
+        max-width:95%;
+        padding-left:1rem;
+        padding-right:1rem;
+        border-bottom: 2px solid var(--fg_1);
+    }
+    .content{
+        width:100%;
+    }
+    .franklin-content{
+        max-width:100%;
+        padding:1rem;
+    }
+    .side-bar .header, #side-menu {
+        flex-direction:row;
+        display:flex;
+        border-bottom:none;
+        padding:0rem;
+        margin:0rem;
+    }
+    .menu-list {
+        padding-top:0.7rem;
+        flex-direction:row;
+        display:flex;
+    }
+    .menu-list-item {
+        padding-left:1rem;
+    }
+
+    #ac-toc-button {
+        display:block;
+        max-width:5rem;
+        text-align:center;
+        margin:1rem;
+        padding:0rem;
+        border-radius:0.3rem;
+        background-color:var(--br_orange);
+        color:var(--bg_0);
+    }
+    #ac-toc:checked + #navbar-narrow {
+        display:flex;
+    }
+    #navbar,#navbar-narrow{
+        display:none;
+    }
+    .toc{
+        display:none;
+    }
+}
+
+h1,h2,h3,h4,h5,h6{
+    border-bottom: 2px solid var(--fg_1);
+}
+
+ui, li {
+    list-style-type:none;
+}
+
+code {
+    border-radius:1rem;
+    color:var(--fg_1);
+    font-weight:bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.franklin-content blockquote {
+  background: var(--fg_1);
+  border-left: 7px solid var(--br_green);
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  font-style: italic;
+  color:var(--bg_0);
+}
+
+.franklin-content table, tbody {
+  margin-left: auto;
+  margin-right: auto;
+  border-style:none;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 0.7em;
+}
+
+.franklin-content th {
+    border-top: 2px solid var(--fg_1);
+    border-bottom: 3px double var(--fg_1);
+    border-left-style: none;
+    border-right-style: none;
+    padding:1rem;
+}
+.franklin-content td {
+  border-bottom: 2px solid var(--fg_1);
+    padding:0.7rem;
+}
+.franklin-content table.fndef {
+  margin: 0;
+  margin-bottom: 1em;
+  border: 0;
+}
+
+.franklin-content .fndef tr {
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+
+.franklin-content .fndef td {
+  padding: 0;
+  border: 0;
+}
+
+.franklin-content .fndef td.fndef-backref {
+  vertical-align: top;
+  font-size: 80%;
+  padding-left: 5px;
+}
+
+.franklin-content .fndef td.fndef-content {
+  font-size: 90%;
+  padding-left: 10px;
+}
+.franklin-content .fndef tr {
+  border-left: 2px solid var(--br_cyan);
+}
+
+.post-descr {
+    color:var(--fg_0);
+    margin-left:1rem;
+}
+.category {
+    color:var(--fg_1) !important;
+}
+.title {
+    color:black !important;
+}
+ /* Style the button that is used to open and close the collapsible content */
+ .collapsible {
+  background-color: var(--bg_2);
+  color: var(--fg_0);
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 1rem;
+    border-bottom-right-radius:0;
+    border-bottom-left-radius:0;
+  border-style:none;
+  font-size: inherit;
+  text-align:left;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsiblecontent {
+  display: none;
+background-color:var(--bg_1);
+    border-bottom-right-radius:1rem;
+    border-bottom-left-radius:1rem;
+    padding:1rem;
+
+}
+code::-webkit-scrollbar {
+    border-radius:1rem;
+}
+pre {
+  position: relative;
+}
+
+.copy-button {
+  cursor: pointer;
+  border: 0;
+    font-weight:bold;
+    font-size:1.2rem;
+  font-size: 1rem;
+    text-transform: uppercase;
+    padding: 0.7rem;
+    margin:0.3rem;
+    color: var(--bg_1);
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.copy-button:hover,
+.copy-button:active {
+    outline: 0;
+    color:var(--br_green);
+}
+
+.toc {
+    padding:1rem;
+    text-align:center;
+    font-weight:bold;
+    color:var(--fg_1);
+}
+
+
+
+.inner-link {
+    background-color:var(--bg_2);
+    padding:1rem;
+    border-radius:1rem;
+}
+.il-header {
+    text-align:center;
+    font-weight:bold;
+}
+
+.note {
+  margin-top: 1.5rem;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1rem;
+}
+.note .content {
+  padding: 0.3rem;
+  background-color:var(--bg_1);
+}
+.note .title{
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding:0.5rem;
+  margin-bottom: 0;
+    width:100%;
+  background-color:var(--blue);
+  color:var(--bg_0);
+}
+
+.warning {
+  margin-top: 1.5rem;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1rem;
+}
+.warning .content {
+  padding: 0.3rem;
+  background-color:var(--bg_1);
+}
+.warning .title{
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding:0.5rem;
+  margin-bottom: 0;
+    width:100%;
+  background-color:var(--red);
+  color:var(--bg_0);
+}
+.def {
+  margin-top: 1.5rem;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 1rem;
+}
+.def .content {
+  padding: 0.3rem;
+  background-color:var(--bg_1);
+}
+.def .title{
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding:0.5rem;
+    width:100%;
+  background-color:var(--green);
+  color:var(--bg_0);
+}
+
+.content::-webkit-scrollbar{
+    display:none;
+}

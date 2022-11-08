@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang=ko>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/libs/katex/katex.min.css">
+    <link rel="stylesheet" href="/libs/highlight/styles/tokyo-night-dark.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="icon" href="/assets/squid.png">
+    {{isdef title}} <title>{{fill title}}</title> {{end}}
+</head>
+
+<body>
+
+    <div class="main-content">
+        <div class="side-bar">
+            <div class="header">
+                <a href="/" class="title">
+                    blog
+                    <a id="github" class="github" href="//github.com/">{{github}}</a>
+                </a>
+            </div>
+            <div class="menu" id="side-menu">
+                <ul class="menu-list">
+                    <li class="menu-list-item {{ispage index}}active{{end}}"><a href="/"
+                            class="menu-list-link {{ispage index}}active{{end}}">index</a>
+                    <li class="menu-list-item {{ispage glossary}}active{{end}}"><a href="/glossary/"
+                            class="menu-list-link {{ispage glossary}}active{{end}}">glossary</a>
+                    <li class="menu-list-item {{ispage about/*}}active{{end}}">
+                        <a href="/about/" class="menu-list-link {{ispage about}}active{{end}}">About</a>
+                </ul>
+            </div>
+            <div id="navbar">
+                <nav class="nav__list">
+                    <ul class="nav__items">
+                        {{navigation}}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        {{ispage /posts/*}}
+        <label id="ac-toc-button" for="ac-toc">ToC</label>
+        <input id="ac-toc" name="accordion-toc" type="checkbox">
+        {{end}}
+        <div id="navbar-narrow">
+            <nav class="nav__list">
+                <ul class="nav__items">
+                    {{navigation}}
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
