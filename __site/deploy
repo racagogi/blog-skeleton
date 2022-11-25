@@ -1,6 +1,3 @@
-julia -e ' using Pkg;
-            using Franklin;
-            Pkg.activate(".");
-            Pkg.instantiate();
-            serve(single=true, clear=true, prerender=true);
+julia -e '  using Franklin;
+            serve(clear=true,single=true);
             publish();'

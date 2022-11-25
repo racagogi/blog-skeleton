@@ -48,9 +48,6 @@ window.addEventListener('DOMContentLoaded', () => {
         observer.observe(section);
     });
 
-    document.querySelector("button.greedy-nav__toggle").addEventListener("click", function() {
-        document.querySelector("#navbar-container").classList.add('visible');
-    });
 
     document.querySelectorAll("#navbar .nav__items a").forEach(x => {
         x.addEventListener("click", function() {

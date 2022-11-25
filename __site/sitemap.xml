@@ -3,43 +3,31 @@
 
 <url>
     <loc>about/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>posts/category1/lorem/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
+    <lastmod>2022-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>posts/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
+    <lastmod>2022-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>404/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
-    <loc>posts/category1/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
+    <lastmod>2022-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>index.html</loc>
-    <lastmod>2022-11-08</lastmod>
+    <lastmod>2022-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
 <url>
     <loc>glossary/index.html</loc>
-    <lastmod>2022-11-08</lastmod>
+    <lastmod>2022-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
 </url>
